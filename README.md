@@ -15,17 +15,17 @@
 - Publicitar e disseminar de informação de interesse público;
 
 #Users: 
-• SYSADMIN
-• BackOffice Geral do Promotor: BO-P
-• BackOffice do Promotor para Gestão de Folhas de Obra: BO-SM (Sheet Manager)
-• BackOffice do Promotor para Verificação Geral de Folhas de Obra: BO-SGV (Sheet 
+- SYSADMIN
+- BackOffice Geral do Promotor: BO-P
+- BackOffice do Promotor para Gestão de Folhas de Obra: BO-SM (Sheet Manager)
+- BackOffice do Promotor para Verificação Geral de Folhas de Obra: BO-SGV (Sheet 
 General Viewer)
-• BackOffice do Promotor para Verificação de Detalhe de Folhas de Obra: BO-SDV 
+- BackOffice do Promotor para Verificação de Detalhe de Folhas de Obra: BO-SDV 
 (Sheet General Viewer)
-• Backoffice de parceiros representantes: BO-REP
-• Operadores de parceiros / Front-End USER (USER-OP)
-• Enduser regstado (REG-USER)
-• Enduser publico (PUB-USER)
+- Backoffice de parceiros representantes: BO-REP
+- Operadores de parceiros / Front-End USER (USER-OP)
+- Enduser regstado (REG-USER)
+- Enduser publico (PUB-USER)
 
 -------------------------------------------------------------
 
