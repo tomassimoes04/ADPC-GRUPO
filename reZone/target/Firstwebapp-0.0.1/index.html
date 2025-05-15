@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <title>APDC-2025-Individual-66043</title>
+        <style>
+            h1 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 200px;
+            }
+            h3 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 50px;
+            }
+            .content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                width: 100%;
+                height: 400px;
+            }
+            .footer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to my website!</h1>
+
+        <h3 colspan="2" style="font-weight:bold;">Available Operations:</h3>
+
+        <div class = "content">
+
+            <form class="register-form" id="registerForm">
+                <div>
+                    <label for="user_id">*User ID:</label>
+                    <input type="text" id="user_id" name="user_id" required />
+                </div>
+
+                <div>
+                    <label for="user_full_name">*Full Name:</label>
+                    <input type="text" id="user_full_name" name="user_full_name" required />
+                </div>
+
+                <div>
+                    <label for="user_email">*Email:</label>
+                    <input type="text" id="user_email" name="user_email" required />
+                </div>
+
+                <div>
+                    <label for="user_phone">*Phone Number:</label>
+                    <input type="text" id="user_phone" name="user_phone" required />
+                </div>
+
+                <div>
+                    <label for="user_profile">*Profile Type:</label>
+                    <input type="text" id="user_profile" name="user_profile" required />
+                </div>
+
+                <div>
+                    <label for="user_pwd">*Password:</label>
+                    <input type="text" id="user_pwd" name="user_pwd" required />
+                </div>
+
+                <div>
+                    <label for="confirmation">*Confirm Password:</label>
+                    <input type="text" id="confirmation" name="confirmation" required />
+                </div>
+
+                <div>
+                    <label for="user_cc_bi">CC/BI:</label>
+                    <input type="text" id="user_cc_bi" name="user_cc_bi" />
+                </div>
+
+                <div>
+                    <label for="user_role">Role:</label>
+                    <input type="text" id="user_role" name="user_role" />
+                </div>
+
+                <div>
+                    <label for="user_nif">NIF:</label>
+                    <input type="text" id="user_nif" name="user_nif" />
+                </div>
+
+                <div>
+                    <label for="user_company">Company:</label>
+                    <input type="text" id="user_company" name="user_company" />
+                </div>
+
+                <div>
+                    <label for="user_job">Job:</label>
+                    <input type="text" id="user_job" name="user_job" />
+                </div>
+
+                <div>
+                    <label for="user_address">Address:</label>
+                    <input type="text" id="user_address" name="user_address" />
+                </div>
+
+                <div>
+                    <label for="user_company_nif">Company NIF:</label>
+                    <input type="text" id="user_company_nif" name="user_company_nif" />
+                </div>
+
+                <div>
+                    <label for="user_account_state">Account State:</label>
+                    <input type="text" id="user_account_state" name="user_account_state" />
+                </div>
+
+                <button type="submit">Register new account</button>
+
+                <h5>*Mandatory Space</h5>
+
+            </form>
+
+            <div id="registerError" style="color:red;"></div>
+            <div id="registerSuccess" style="color:green"></div>
+
+            <h4>or</h4>
+
+            <form class="login-form" id="loginForm">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="id" required />
+                </div>
+
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+
+                <button type="submit">Log in</button>
+            </form>
+
+            <div id="loginError" style="color:red;"></div>
+        </div>
+
+    </body>
+    <footer>
+        <div class = "footer">
+            Thank you for visiting my website!
+        </div>
+    </footer>
+
+    <script src="scripts/login.js"></script>
+    <script src="scripts/register.js"></script>
+</html>
