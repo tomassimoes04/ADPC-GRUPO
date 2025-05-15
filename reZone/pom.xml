@@ -12,6 +12,7 @@
 
     <properties>
         <appengine.maven.plugin.version>2.8.3</appengine.maven.plugin.version>
+        <!-- REMOVIDO: jetty.plugin.version>11.0.15</jetty.plugin.version -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>21</maven.compiler.source>
@@ -24,7 +25,7 @@
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>libraries-bom</artifactId>
-                <version>26.9.0</version>
+                <version>26.33.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -41,80 +42,101 @@
             <version>2.0.33</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.glassfish.jersey.core</groupId>
-            <artifactId>jersey-common</artifactId>
-            <version>3.1.10</version>
-        </dependency>
-
+        <!-- Jersey Dependencies (JAX-RS Implementation) -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
-            <version>3.1.10</version>
+            <version>3.1.7</version>
         </dependency>
-
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
-            <version>3.1.10</version>
+            <version>3.1.7</version>
         </dependency>
-
-
-
-        <dependency>
-            <groupId>org.glassfish.jersey.inject</groupId>
-            <artifactId>project</artifactId>
-            <version>3.1.10</version>
-            <type>pom</type>
-        </dependency>
-
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
-            <version>3.1.10</version>
+            <version>3.1.7</version>
         </dependency>
 
-
+        <!-- Jakarta EE API (for Servlet API, etc.) -->
         <dependency>
             <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>10.0.0</version>  <!-- Use latest Jakarta EE version -->
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>10.0.0</version>
             <scope>provided</scope>
         </dependency>
 
-
-
+        <!-- Google Cloud Client Libraries (versões gerenciadas pelo BOM) -->
         <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-datastore</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-storage</artifactId>
         </dependency>
         <dependency>
             <groupId>com.google.cloud</groupId>
             <artifactId>google-cloud-tasks</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.google.cloud</groupId>
-            <artifactId>google-cloud-datastore</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>com.google.cloud</groupId>
-            <artifactId>google-cloud-storage</artifactId>
-        </dependency>
 
+        <!-- Utilities -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <!-- Versão gerenciada pelo BOM -->
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.16.0</version>
+        </dependency>
 
     </dependencies>
 
     <build>
-        <!-- To allow interaction with Gcloud client through maven-->
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
         <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <showDeprecation>${maven.compiler.showDeprecation}</showDeprecation>
+                </configuration>
+            </plugin>
+            <!-- Maven WAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+            <!-- Google App Engine Maven Plugin (para deploy) -->
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>appengine-maven-plugin</artifactId>
                 <version>${appengine.maven.plugin.version}</version>
+                <configuration>
+
+                    <deploy.projectId>rezone-459910</deploy.projectId>
+
+                    <deploy.version>v2</deploy.version>
+                </configuration>
             </plugin>
+
+
+
         </plugins>
 
     </build>

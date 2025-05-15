@@ -16,7 +16,6 @@ public class ChangeResource {
     private static final KeyFactory userKeyFactory = datastore.newKeyFactory().setKind("User");
 
     public ChangeResource() {}
-
     @POST
     @Path("/role")
     @Consumes(MediaType.APPLICATION_JSON)

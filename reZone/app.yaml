@@ -1,0 +1,23 @@
+# Obrigatório: Especifica o runtime Java 21
+runtime: java21
+
+# Opcional mas recomendado: Define a classe de instância
+# F1 é a mais básica e barata, boa para começar. Outras opções: F2, F4, etc.
+# B1, B2... para Backend/Basic Scaling (diferente modelo de preço/performance)
+instance_class: F1
+
+  # Opcional: Configurações de Scaling Automático (defaults são geralmente razoáveis para começar)
+  # automatic_scaling:
+  #   min_instances: 0 # Pode ir a zero para poupar custos (mas tem cold starts)
+  #   max_instances: 10 # Limite máximo de instâncias
+  #   target_cpu_utilization: 0.65 # Escala quando CPU média > 65%
+
+# Opcional: Variáveis de Ambiente (se a tua app precisar)
+# env_variables:
+#   MY_API_KEY: "some_secret_value"
+#   OTHER_SETTING: "config_value"
+
+# Opcional: Handlers (geralmente não necessário para APIs JAX-RS que mapeiam tudo)
+# handlers:
+# - url: /.*
+#   script: auto
